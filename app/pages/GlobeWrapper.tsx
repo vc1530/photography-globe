@@ -16,34 +16,37 @@ export function GlobeWrapper() {
     if (!globeRef.current) return;
 
     const mm = window.matchMedia("(min-width: 768px)");
-    if (mm.matches) {
-      gsap.to(globeRef.current, {
-        x: "20vw",
-        ease: "none",
-        scrollTrigger: {
-          trigger: "#scroll-container",
-          start: "top top",
-          end: "bottom bottom",
-          scrub: true,
+    gsap.to(globeRef.current, {
+      x: mm.matches ? "20vw" : 0,
+      y: mm.matches ? "100vh" : "-25vh",
+      ease: "none",
+      scrollTrigger: {
+        trigger: "#scroll-container",
+        start: "top top",
+        end: "+=100%",
+        scrub: true,
+        onUpdate: (self) => {
+          const worldText = document.getElementById("world-text");
+          if (!worldText) {
+            return;
+          }
+          if (self.progress === 1) {
+            worldText.classList.add("fixed");
+          } else {
+            worldText.classList.remove("fixed");
+          }
         },
-      });
-    } else {
-      gsap.to(globeRef.current, {
-        y: "-25vw",
-        ease: "none",
-        scrollTrigger: {
-          trigger: "#scroll-container",
-          start: "top top",
-          end: "bottom bottom",
-          scrub: true,
-        },
-      });
-    }
+      },
+    });
   }, []);
 
   return (
-    <section id="scroll-container">
-      <div ref={globeRef} className="fixed top-0 transform z-0">
+    <section
+      id="scroll-container"
+      className="h-[200vh] overflow-x-hidden w-screen"
+    >
+      {" "}
+      <div ref={globeRef} className="sticky top-0 transform z-0">
         <GlobeLoader />
       </div>
       <Home />

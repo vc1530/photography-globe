@@ -13,7 +13,10 @@ export function Home() {
   const { mounted } = useAppContext();
 
   return (
-    <section id="home" className={instrument.className + " h-screen w-screen"}>
+    <section
+      id="home"
+      className={instrument.className + " h-screen w-screen -mt-[100vh]"}
+    >
       {mounted && (
         <div className="h-full w-full flex flex-col items-center justify-center">
           <h3 className="fade-in md:text-5xl text-3xl">

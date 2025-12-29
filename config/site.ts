@@ -43,13 +43,13 @@ export const siteConfig = {
       type: PIN_TYPE.STATE,
       countryCode: "CN",
       description:
-        "is where i studied abroad during my undergrad! i learned that though i am not a fan of french food, i love a good french pastry.",
+        "is where i traveled to for spring break during my last semester of college! i learned a lot about yunnan through my chinese language textbooks so coming here was always a goal of mine.",
     },
     {
       label: "taipei",
       countryCode: "TW",
       description:
-        "is where i studied abroad during my undergrad! i learned that though i am not a fan of french food, i love a good french pastry.",
+        "is my favorite city in the world. some of my family lives here and i try to visit every year or so. i fell in love with biking and braised pork rice.",
     },
     {
       label: "san francisco",

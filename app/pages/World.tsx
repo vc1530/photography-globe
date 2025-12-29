@@ -50,7 +50,10 @@ export function World() {
 
   return (
     <section id="world" className={instrument.className + " h-screen"}>
-      <div className="flex flex-col z-10 md:w-1/2 md:p-40 p-10 pt-[62vh">
+      <div
+        id="world-text"
+        className="top-0 z-50 flex flex-col md:w-1/2 md:p-40 p-10 pt-[62vh]"
+      >
         <div className={"md:text-6xl text-3xl"}>
           <h1 id="header">
             welcome, take a<br></br>glimpse into my{" "}

@@ -3,17 +3,18 @@ import Image from "next/image";
 
 export function Gallery() {
   return (
-    <section className="px-10 h-screen">
-      <div className="columns-1 sm:columns-2 md:columns-3 gap-20">
+    <section className="h-screen bg-inherit">
+      <div className="columns-1 sm:columns-2 gap-10 p-10">
         {taipeiPhotos.map((p, i) => (
-          <div key={i} className="mb-20 break-inside-avoid">
+          <div key={i} className="break-inside-avoid">
             <Image
               src={p.src}
               alt={`taipei ${i}`}
               width={800} // arbitrary placeholder
               height={800} // preserves ratio once loaded
-              className="w-full h-auto"
+              className="mb-10 w-full h-auto rounded-lg"
               sizes="(max-width: 768px) 100vw, 33vw"
+              loading="eager"
             />
           </div>
         ))}
