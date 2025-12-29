@@ -16,8 +16,6 @@ import {
 } from "country-state-city";
 import { COUNTRY_TZ_MAP, PIN_TYPE } from "../constants";
 
-type GlobeInstance = ReturnType<typeof import("globe.gl").default>;
-
 const instrument = Instrument_Serif({
   subsets: ["latin"],
   weight: ["400"],
