@@ -133,10 +133,10 @@ export default function GlobeLoader() {
         .polygonStrokeColor(() => "#000000")
         .pointOfView({ lat: 20, lng: 0, altitude: alt })
         .htmlElementsData(pins as object[])
-        .htmlLat((p) => p.lat)
-        .htmlLng((p) => p.lng)
+        // .htmlLat((p) => p.lat)
+        // .htmlLng((p) => p.lng)
         .htmlAltitude(() => 0.02)
-        .htmlElement((p) => {
+        .htmlElement((p: object) => {
           const el = document.createElement("div");
           const elClasses = ["relative", "flex", "justify-center"];
           el.classList.add(...elClasses);
@@ -149,7 +149,7 @@ export default function GlobeLoader() {
 
           const label = document.createElement("div");
 
-          label.innerText = p.label;
+          label.innerText = (p as IPlace).label;
           const labelClasses = [
             instrument.className,
             "h-8",
@@ -173,7 +173,7 @@ export default function GlobeLoader() {
             label.classList.remove("border-[var(--accent)]");
           };
           el.onclick = () => {
-            setPlace(p);
+            setPlace(p as IPlace);
           };
 
           el.appendChild(pin);
