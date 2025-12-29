@@ -46,7 +46,7 @@ export function HeaderMenu() {
               anchor="bottom"
               className={
                 instrument.className +
-                " mt-4 p-4 flex flex-col gap-2 rounded-lg border border-[var(--accent)] bg-[var(--background)] focus:outline-none"
+                " mt-4 p-4 flex flex-col gap-2 rounded-lg border border-[var(--accent)] bg-[var(--background)] focus:outline-none z-200"
               }
             >
               <MenuItem>

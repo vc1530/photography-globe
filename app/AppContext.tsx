@@ -1,5 +1,5 @@
 "use client";
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useState, useRef, Ref } from "react";
 import { siteConfig } from "@/config/site";
 
 export interface IPlace {

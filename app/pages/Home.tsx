@@ -19,7 +19,7 @@ export function Home() {
     >
       {mounted && (
         <div className="h-full w-full flex flex-col items-center justify-center">
-          <h3 className="fade-in md:text-5xl text-3xl">
+          <h3 className="fade-in md:text-5xl text-3xl z-10">
             so far, i&#39;ve been to
           </h3>
           <h1 className="text-9xl z-10 text-center">
@@ -30,7 +30,7 @@ export function Home() {
             />{" "}
             <span className="fade-in">countries</span>
           </h1>
-          <h3 className="fade-in md:text-5xl text-3xl">
+          <h3 className="fade-in md:text-5xl text-3xl z-10">
             here&#39;s what they looked like through my eyes
           </h3>
         </div>

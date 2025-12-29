@@ -45,8 +45,7 @@ export function GlobeWrapper() {
       id="scroll-container"
       className="h-[200vh] overflow-x-hidden w-screen"
     >
-      {" "}
-      <div ref={globeRef} className="sticky top-0 transform z-0">
+      <div ref={globeRef} className="sticky top-0 transform z-1">
         <GlobeLoader />
       </div>
       <Home />

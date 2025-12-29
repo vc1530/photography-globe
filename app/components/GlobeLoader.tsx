@@ -220,6 +220,6 @@ export default function GlobeLoader() {
   }, [theme]);
 
   return (
-    <div id="globe-container" className="z-0 relative w-full h-screen"></div>
+    <div id="globe-container" className="z-1 relative w-full h-screen"></div>
   );
 }
