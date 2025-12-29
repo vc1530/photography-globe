@@ -25,7 +25,7 @@ const instrument = Instrument_Serif({
 export default function GlobeLoader() {
   const globeInstance = useRef<any>(null);
   const { theme } = useTheme();
-  const { setPlace } = useAppContext();
+  const { setPlace, setMounted } = useAppContext();
 
   const [pins, setPins] = useState<IPlace[] | null>(null);
 
@@ -191,8 +191,10 @@ export default function GlobeLoader() {
       controls.enableZoom = false;
       controls.autoRotate = true;
       controls.autoRotateSpeed = 0.3;
+
+      setMounted(true);
     })();
-  }, [pins, setPlace]);
+  }, [pins, setPlace, setMounted]);
 
   //theme change
   useEffect(() => {

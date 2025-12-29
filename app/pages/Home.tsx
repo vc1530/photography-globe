@@ -1,6 +1,7 @@
 import { siteConfig } from "@/config/site";
 import Counter from "@/app/components/Counter";
 import { Instrument_Serif } from "next/font/google";
+import { useAppContext } from "../AppContext";
 
 const instrument = Instrument_Serif({
   subsets: ["latin"],
@@ -9,26 +10,28 @@ const instrument = Instrument_Serif({
 });
 
 export function Home() {
+  const { mounted } = useAppContext();
+
   return (
-    <div
-      id="home"
-      className={
-        instrument.className +
-        " h-screen w-screen flex flex-col items-center justify-center"
-      }
-    >
-      <h3 className="fade-in md:text-5xl text-3xl">so far, i&#39;ve been to</h3>
-      <h1 className="text-9xl z-10 text-center">
-        <Counter
-          end={13}
-          duration={1}
-          colors={Object.values(siteConfig.colors)}
-        />{" "}
-        <span className="fade-in">countries</span>
-      </h1>
-      <h3 className="fade-in md:text-5xl text-3xl">
-        here&#39;s what they looked like through my eyes
-      </h3>
-    </div>
+    <section id="home" className={instrument.className + " h-screen w-screen"}>
+      {mounted && (
+        <div className="h-full w-full flex flex-col items-center justify-center">
+          <h3 className="fade-in md:text-5xl text-3xl">
+            so far, i&#39;ve been to
+          </h3>
+          <h1 className="text-9xl z-10 text-center">
+            <Counter
+              end={13}
+              duration={1}
+              colors={Object.values(siteConfig.colors)}
+            />{" "}
+            <span className="fade-in">countries</span>
+          </h1>
+          <h3 className="fade-in md:text-5xl text-3xl">
+            here&#39;s what they looked like through my eyes
+          </h3>
+        </div>
+      )}
+    </section>
   );
 }

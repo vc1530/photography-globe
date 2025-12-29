@@ -21,15 +21,18 @@ const PlaceInit = {
 type AppState = {
   place: IPlace;
   setPlace: (place: IPlace) => void;
+  mounted: boolean;
+  setMounted: (mounted: boolean) => void;
 };
 
 const AppContext = createContext<AppState | null>(null);
 
 export function AppProviders({ children }: { children: React.ReactNode }) {
   const [place, setPlace] = useState<IPlace>(PlaceInit);
+  const [mounted, setMounted] = useState<boolean>(false);
 
   return (
-    <AppContext.Provider value={{ place, setPlace }}>
+    <AppContext.Provider value={{ place, setPlace, mounted, setMounted }}>
       {children}
     </AppContext.Provider>
   );
