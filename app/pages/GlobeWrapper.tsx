@@ -5,7 +5,6 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Home } from "./Home";
 import { World } from "./World";
-import { PhotoAnimation } from "./PhotoAnimation";
 import GlobeLoader from "@/app/components/GlobeLoader";
 
 gsap.registerPlugin(ScrollTrigger);

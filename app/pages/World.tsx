@@ -31,16 +31,16 @@ export function World() {
       document.getElementById("header")?.classList.add("fade-out");
       const placeLabel = document.getElementById("place-label");
       if (placeLabel) {
-        placeLabel.innerText = "word";
+        placeLabel.innerText = "world";
+        tween.current = gsap.to(textRef.current, {
+          duration: 1,
+          scrambleText: {
+            text: place.label,
+            speed: 1,
+          },
+          ease: "none",
+        });
       }
-      tween.current = gsap.to(textRef.current, {
-        duration: 1,
-        scrambleText: {
-          text: place.label,
-          speed: 1,
-        },
-        ease: "none",
-      });
     }
 
     return () => {

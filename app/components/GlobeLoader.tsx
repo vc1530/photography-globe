@@ -15,6 +15,7 @@ import {
   IState,
 } from "country-state-city";
 import { COUNTRY_TZ_MAP, PIN_TYPE } from "../constants";
+import { GlobeInstance } from "globe.gl";
 
 const instrument = Instrument_Serif({
   subsets: ["latin"],
@@ -23,7 +24,7 @@ const instrument = Instrument_Serif({
 });
 
 export default function GlobeLoader() {
-  const globeInstance = useRef<any>(null);
+  const globeInstance = useRef<GlobeInstance>(null);
   const { theme } = useTheme();
   const { setPlace, setMounted } = useAppContext();
 
