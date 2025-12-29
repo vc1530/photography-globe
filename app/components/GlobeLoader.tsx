@@ -145,33 +145,14 @@ export default function GlobeLoader() {
         .htmlAltitude(() => 0.02)
         .htmlElement((p: object) => {
           const el = document.createElement("div");
-          const elClasses = ["relative", "flex", "justify-center"];
-          el.classList.add(...elClasses);
-
-          const pin = document.createElement("span");
-
-          pin.innerText = "📍";
-          pin.style.fontSize = "30px";
-          pin.style.position = "absolute";
-
-          const label = document.createElement("div");
-
-          label.innerText = (p as IPlace).label;
-          const labelClasses = [
-            instrument.className,
-            "h-8",
-            "p-1",
-            "border-1",
-            "rounded",
-            "-translate-y-8",
-            "bg-[var(--background)]",
-            "z-100",
+          const elClasses = [
+            "relative",
+            "flex",
+            "justify-center",
+            "pointer-events-auto",
+            "cursor-pointer",
           ];
-          label.style.pointerEvents = "none";
-          label.classList.add(...labelClasses);
-
-          el.style.pointerEvents = "auto";
-          el.style.cursor = "pointer";
+          el.classList.add(...elClasses);
 
           el.onmouseenter = () => {
             label.classList.add("border-[var(--accent)]");
@@ -183,8 +164,29 @@ export default function GlobeLoader() {
             setPlace(p as IPlace);
           };
 
+          const pin = document.createElement("span");
+
+          pin.innerText = "📍";
+          const pinClasses = ["text-xl", "absolute", "-translate-y-1"];
+          pin.classList.add(...pinClasses);
+
+          const label = document.createElement("div");
+          label.innerText = (p as IPlace).label;
+          const labelClasses = [
+            instrument.className,
+            "h-8",
+            "p-1",
+            "border-1",
+            "rounded",
+            "-translate-y-10",
+            "bg-[var(--background)]",
+            "z-100",
+            "pointer-events-none",
+          ];
+          label.classList.add(...labelClasses);
+
           el.appendChild(pin);
-          el.append(label);
+          el.appendChild(label);
           return el;
         });
 
