@@ -114,13 +114,21 @@ export default function GlobeLoader() {
       const res = await fetch("/data/countries.geojson");
       const countries = await res.json();
 
+      const backgroundColor = window
+        .getComputedStyle(document.body)
+        .getPropertyValue("background-color");
+
+      const textColor = window
+        .getComputedStyle(document.body)
+        .getPropertyValue("color");
+
       globeInstance.current = new Globe(
         document.getElementById("globe-container")!
       )
         .backgroundColor("rgba(0,0,0,0)")
         .globeMaterial(
           new THREE.MeshBasicMaterial({
-            color: "#FFFFFF",
+            color: backgroundColor,
             transparent: true,
             opacity: 0.75,
           })
@@ -130,11 +138,9 @@ export default function GlobeLoader() {
         .polygonsData(countries.features)
         .polygonCapColor("rgba(0,0,0,0)")
         .polygonSideColor(() => "rgba(0,0,0,0)")
-        .polygonStrokeColor(() => "#000000")
+        .polygonStrokeColor(() => textColor)
         .pointOfView({ lat: 20, lng: 0, altitude: alt })
         .htmlElementsData(pins as object[])
-        // .htmlLat((p) => p.lat)
-        // .htmlLng((p) => p.lng)
         .htmlAltitude(() => 0.02)
         .htmlElement((p: object) => {
           const el = document.createElement("div");
@@ -188,6 +194,7 @@ export default function GlobeLoader() {
     })();
   }, [pins, setPlace]);
 
+  //theme change
   useEffect(() => {
     if (!globeInstance.current) return;
 
