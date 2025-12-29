@@ -23,7 +23,6 @@ const instrument = Instrument_Serif({
 });
 
 export default function GlobeLoader() {
-  const globeRef = useRef<HTMLDivElement | null>(null);
   const globeInstance = useRef<any>(null);
   const { theme } = useTheme();
   const { setPlace } = useAppContext();
@@ -79,8 +78,6 @@ export default function GlobeLoader() {
 
       const { lat, lng } = coordinatesMap[key];
 
-      console.log(p.label, lat, lng);
-
       //geo-tz doesn't work for a select few timezones
       //so we predefine those
       if (countryCode && COUNTRY_TZ_MAP[countryCode]) {
@@ -107,7 +104,7 @@ export default function GlobeLoader() {
   }, []);
 
   useEffect(() => {
-    if (!globeRef.current) return;
+    if (!document.getElementById("globe-container")) return;
 
     const mm = window.matchMedia("(min-width: 768px)");
     const alt = mm.matches ? 2.2 : 3.2;
@@ -117,7 +114,9 @@ export default function GlobeLoader() {
       const res = await fetch("/data/countries.geojson");
       const countries = await res.json();
 
-      globeInstance.current = Globe()(globeRef.current)
+      globeInstance.current = new Globe(
+        document.getElementById("globe-container")!
+      )
         .backgroundColor("rgba(0,0,0,0)")
         .globeMaterial(
           new THREE.MeshBasicMaterial({
@@ -133,11 +132,11 @@ export default function GlobeLoader() {
         .polygonSideColor(() => "rgba(0,0,0,0)")
         .polygonStrokeColor(() => "#000000")
         .pointOfView({ lat: 20, lng: 0, altitude: alt })
-        .htmlElementsData(pins)
-        .htmlLat((d) => d.lat)
-        .htmlLng((d) => d.lng)
+        .htmlElementsData(pins as object[])
+        .htmlLat((p) => p.lat)
+        .htmlLng((p) => p.lng)
         .htmlAltitude(() => 0.02)
-        .htmlElement((d) => {
+        .htmlElement((p) => {
           const el = document.createElement("div");
           const elClasses = ["relative", "flex", "justify-center"];
           el.classList.add(...elClasses);
@@ -150,7 +149,7 @@ export default function GlobeLoader() {
 
           const label = document.createElement("div");
 
-          label.innerText = d.label;
+          label.innerText = p.label;
           const labelClasses = [
             instrument.className,
             "h-8",
@@ -174,7 +173,7 @@ export default function GlobeLoader() {
             label.classList.remove("border-[var(--accent)]");
           };
           el.onclick = () => {
-            setPlace(d);
+            setPlace(p);
           };
 
           el.appendChild(pin);
@@ -208,5 +207,7 @@ export default function GlobeLoader() {
       .polygonStrokeColor(() => textColor);
   }, [theme]);
 
-  return <div className="z-0 relative w-full h-screen" ref={globeRef}></div>;
+  return (
+    <div id="globe-container" className="z-0 relative w-full h-screen"></div>
+  );
 }
