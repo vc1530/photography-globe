@@ -1,7 +1,11 @@
+// GIVEN a latitude and longitude
+// GET the timezone
+
+// GET /api/timezones?lat={LATITUDE}&lon={LONGITUDE}
+
 import { NextResponse } from "next/server";
 import { find } from "geo-tz";
 
-// GET /api/timezones?lat=40.7128&lon=-74.0060
 export async function GET(req: Request) {
   try {
     const { searchParams } = new URL(req.url);
@@ -25,7 +29,7 @@ export async function GET(req: Request) {
       );
     }
 
-    const timezone = find(lat, lon)[0]; // geo-tz returns an array
+    const timezone = find(lat, lon)[0];
     return NextResponse.json({ timezone });
   } catch (err) {
     return NextResponse.json(

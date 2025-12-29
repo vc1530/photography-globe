@@ -107,9 +107,6 @@ export default function GlobeLoader() {
   useEffect(() => {
     if (!document.getElementById("globe-container")) return;
 
-    const mm = window.matchMedia("(min-width: 768px)");
-    const alt = mm.matches ? 2.2 : 3.2;
-
     (async () => {
       const Globe = (await import("globe.gl")).default;
       const res = await fetch("/data/countries.geojson");
@@ -122,6 +119,9 @@ export default function GlobeLoader() {
       const textColor = window
         .getComputedStyle(document.body)
         .getPropertyValue("color");
+
+      const mm = window.matchMedia("(min-width: 768px)");
+      const alt = mm.matches ? 2.2 : 3.2;
 
       globeInstance.current = new Globe(
         document.getElementById("globe-container")!

@@ -7,15 +7,15 @@ import { siteConfig } from "@/config/site";
 interface CounterProps {
   end: number;
   duration?: number;
-  colors?: string[]; // array of colors for each step
+  colors?: string[];
   className?: string;
 }
 
 export default function Counter({
   end,
   duration = 1,
-  colors = Object.values(siteConfig.colors), // will cycle if fewer than end
-  className = "text-9xl inline-block w-24 font-instrument",
+  colors = Object.values(siteConfig.colors),
+  className = "text-9xl inline-block w-24",
 }: CounterProps) {
   const [value, setValue] = useState(1);
 
