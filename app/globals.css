@@ -13,12 +13,6 @@
   --foreground: #ffffff;
 }
 
-@theme inline {
-  --font-fira: "Fira Code", monospace;
-  --color-purple: var(--purple);
-  --color-green: var(--green);
-}
-
 html {
   scroll-behavior: smooth;
 }

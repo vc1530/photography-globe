@@ -5,7 +5,6 @@ import "./globals.css";
 import { AppThemeProvider } from "@/app/AppThemeProvider";
 import { ThemeVars } from "@/app/ThemeVars";
 import { AppProviders } from "./AppContext";
-import App from "next/app";
 
 export const metadata: Metadata = {
   title: "Create Next App",
