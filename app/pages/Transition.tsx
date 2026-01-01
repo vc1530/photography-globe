@@ -33,11 +33,11 @@ export function Transition() {
   return (
     <section
       id="transition"
-      className="-mt-[100vh] absolute h-[200vh] w-screen z-0"
+      className="-mt-[100vh] h-[200vh] overflow-y-hidden absolute w-screen overflow-x-hidden z-0"
     >
       <div id="background" className="absolute inset-0">
         <Image
-          className="object-cover"
+          className="object-cover z-0"
           src={taipeiPhotos[2].src}
           alt="taipei"
           fill

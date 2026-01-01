@@ -4,7 +4,7 @@ import { Transition } from "./pages/Transition";
 
 export default function main() {
   return (
-    <main className="snap-y snap-mandatory">
+    <main id="main" className="w-screen overflow-x-hidden">
       <GlobeWrapper />
       <Transition />
       <Gallery />

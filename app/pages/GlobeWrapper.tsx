@@ -41,11 +41,8 @@ export function GlobeWrapper() {
   }, []);
 
   return (
-    <section
-      id="scroll-container"
-      className="h-[200vh] overflow-x-hidden w-screen"
-    >
-      <div ref={globeRef} className="sticky top-0 transform z-1">
+    <section id="scroll-container" className="w-screen">
+      <div ref={globeRef} className="top-0 transform z-10">
         <GlobeLoader />
       </div>
       <Home />

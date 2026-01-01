@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export function Gallery() {
   return (
-    <section className="mt-[100vh] h-screen bg-inherit">
+    <section className="mt-[100vh] w-screen bg-inherit">
       <h3 className="p-10">TAIPEI</h3>
       <div className="columns-1 sm:columns-2 gap-10 p-10">
         {taipeiPhotos.map((p, i) => (
