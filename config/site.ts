@@ -5,7 +5,7 @@ export const siteConfig = {
     numCountries: 13,
     initials: "VC",
     homeTimeZone: "America/New_York",
-    homeCity: "new york city",
+    homeCity: "New York City",
   },
   colors: {
     accent: "#c09bd8",
@@ -16,82 +16,82 @@ export const siteConfig = {
     {
       lat: 40.7128,
       lng: -74.006,
-      label: "new york city",
+      label: "New York City",
       countryCode: "US",
       description:
-        "is where i was born and raised! i still currently work and live here in brooklyn.",
+        "is where I was born and raised! I still currently work and live here in brooklyn.",
       type: PIN_TYPE.CITY,
     },
     {
-      label: "japan",
+      label: "Japan",
       countryCode: "JP",
       description:
-        "i visited tokyo in 2024 when i was traveling asia. unfortunately, i got food poisoning from eating too much raw fish but i still had the best matcha of my life.",
+        "I visited tokyo in 2024 when I was traveling asia. Unfortunately, I got food poisoning from eating too much raw fish but I still had the best matcha of my life.",
       type: PIN_TYPE.COUNTRY,
     },
     {
       lat: 48.8566,
       lng: 2.3522,
-      label: "paris",
+      label: "Paris",
       countryCode: "FR",
       description:
-        "is where i studied abroad during my undergrad! i learned that though i am not a fan of french food, i love a good french pastry.",
+        "is where I studied abroad during my undergrad! I learned that though I am not a fan of french food, I love a good french pastry.",
       type: PIN_TYPE.CITY,
     },
     {
-      label: "yunnan",
+      label: "Yunnan",
       type: PIN_TYPE.STATE,
       countryCode: "CN",
       description:
-        "is where i traveled to for spring break during my last semester of college! i learned a lot about yunnan through my chinese language textbooks so coming here was always a goal of mine.",
+        "is where I traveled to for Spring break during my last semester of college! I learned a lot about Yunnan through my chinese language textbooks so coming here was always a goal of mine.",
     },
     {
-      label: "taipei",
+      label: "Taipei",
       countryCode: "TW",
       description:
-        "is my favorite city in the world. some of my family lives here and i try to visit every year or so. i fell in love with biking and braised pork rice.",
+        "is my favorite city in the world. Some of my family lives here and I try to visit every year or so. I fell in love with biking and braised pork rice.",
     },
     {
-      label: "san francisco",
+      label: "San Francisco",
       countryCode: "US",
       description:
-        "is where i studied abroad during my undergrad! i learned that though i am not a fan of french food, i love a good french pastry.",
+        "is where I studied abroad during my undergrad! i learned that though i am not a fan of french food, i love a good french pastry.",
     },
     {
-      label: "ciudad de méxico",
+      label: "Ciudad de México",
       countryCode: "MX",
       description:
         "is where i studied abroad during my undergrad! i learned that though i am not a fan of french food, i love a good french pastry.",
     },
     {
-      label: "london",
+      label: "London",
       countryCode: "GB",
       description:
         "is where i studied abroad during my undergrad! i learned that though i am not a fan of french food, i love a good french pastry.",
     },
     {
-      label: "south korea",
+      label: "South Korea",
       countryCode: "KR",
       type: PIN_TYPE.COUNTRY,
       description:
         "is where i studied abroad during my undergrad! i learned that though i am not a fan of french food, i love a good french pastry.",
     },
     {
-      label: "puerto rico",
+      label: "Puerto Rico",
       countryCode: "PR",
       type: PIN_TYPE.COUNTRY,
       description:
         "is where i studied abroad during my undergrad! i learned that though i am not a fan of french food, i love a good french pastry.",
     },
     {
-      label: "switzerland",
+      label: "Switzerland",
       countryCode: "CH",
       type: PIN_TYPE.COUNTRY,
       description:
         "is where i studied abroad during my undergrad! i learned that though i am not a fan of french food, i love a good french pastry.",
     },
     {
-      label: "italy",
+      label: "Italy",
       countryCode: "IT",
       type: PIN_TYPE.COUNTRY,
       description:

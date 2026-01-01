@@ -26,15 +26,15 @@ export function GlobeWrapper() {
         end: "+=100%",
         scrub: true,
         onUpdate: (self) => {
-          const worldText = document.getElementById("world-text");
-          if (!worldText) {
-            return;
-          }
-          if (self.progress === 1) {
-            worldText.classList.add("fixed");
-          } else {
-            worldText.classList.remove("fixed");
-          }
+          // const worldText = document.getElementById("world-text");
+          // if (!worldText) {
+          //   return;
+          // }
+          // if (self.progress === 1) {
+          //   worldText.classList.add("fixed");
+          // } else {
+          //   worldText.classList.remove("fixed");
+          // }
         },
       },
     });

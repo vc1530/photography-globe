@@ -14,7 +14,7 @@ const fira = Fira_Code({
 export function Footer() {
   const { place } = useAppContext();
   return (
-    <footer className="fixed bottom-0 left-0 w-screen md:text-xl z-50 pt-2">
+    <footer className="h-10 fixed bottom-0 left-0 w-full md:text-xl z-50 bg-inherit pt-2">
       <span
         className={
           fira.className +
