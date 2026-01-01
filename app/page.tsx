@@ -6,7 +6,7 @@ export default function main() {
   return (
     <main id="main" className="w-screen overflow-x-hidden">
       <GlobeWrapper />
-      <Transition />
+      {/* <Transition /> */}
       <Gallery />
     </main>
   );
